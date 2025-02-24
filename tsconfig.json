@@ -8,5 +8,6 @@
     "jsx": "react-jsx", // もしくは "react"
     "esModuleInterop": true
   }
+
   // "types": ["jest", "@testing-library/jest-dom", "@testing-library/react"]
 }
