@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Howto from './data.json';
 import './button.css';
 
 export interface ButtonProps {
@@ -26,6 +26,18 @@ export const Button = ({
   const mode = primary
     ? 'storybook-button--primary'
     : 'storybook-button--secondary';
+
+  const wrongHowTo = {
+    ...Howto,
+    section: Howto.section?.map((section) => ({
+      ...section,
+      step: section.step.map((s, index) => ({
+        ...s,
+        name: index % 2 === 1 ? '' : s.name,
+      })),
+    })),
+  };
+  console.log(wrongHowTo);
   return (
     <>
       <button
